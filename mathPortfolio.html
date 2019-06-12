@@ -1,0 +1,124 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>mathSite</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+            background-color: darkslategrey;
+        }
+        li {
+            float:right;
+            border-left:1px solid grey;
+        }
+        li a {
+            display:block;
+            color:white;
+            text-align:center;
+            padding:10px 12px;
+            text-decoration:none;
+        }
+        li a:hover {
+            background-color:black;
+        }
+    </style>
+    <script>
+        function add() {
+            var a = parseFloat(document.getElementById('add1').value);
+            var b = parseFloat(document.getElementById('add2').value);
+            var add = a + b;
+            document.getElementById('divAdd').innerHTML = add;
+        }
+        function subtract() {
+            var a = parseFloat(document.getElementById('sub1').value);
+            var b = parseFloat(document.getElementById('sub2').value);
+            var sub = a - b;
+            document.getElementById('divSub').innerHTML = sub;
+        }
+        function multiply() {
+            var a = parseFloat(document.getElementById('mult1').value);
+            var b = parseFloat(document.getElementById('mult2').value);
+            var mult = a * b;
+            document.getElementById('divMult').innerHTML = mult;
+        }
+        function divide() {
+            var a = parseFloat(document.getElementById('div1').value);
+            var b = parseFloat(document.getElementById('div2').value);
+            var div = a / b;
+            document.getElementById('divDiv').innerHTML = div;
+        }
+        function fab() {
+            var x = parseFloat(document.getElementById('fabStart').value);
+            var y = 0;
+            var nums = parseFloat(document.getElementById('fabNum').value);
+            var halfNums = nums / 2;
+            var string = '';
+            for (var i = 0; i < halfNums; i++) {
+                x += y;
+                string += x + ', ';
+                y += x;
+                if (i < (halfNums - 1)) {
+                    string += y + ', ';
+                }
+                else {
+                    string += y;
+                }
+            }
+            document.getElementById('divFab').innerHTML = string;
+        }
+    </script>
+</head>
+
+<body style="background-image:url('http://theradiodoctor.com/wp-content/uploads/2016/01/Hi-Tech-Wallpaper-20-light-1024x768.jpg');
+width:1424px;height:1024px;text-align:center">
+    
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="youtube.com">Games!</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://kbgardner6.wixsite.com/website">Portfolio</a></li>
+        <li><a href="#calculator">Calculator</a></li>
+    </ul>
+
+    <h1>
+        <img src="https://target.scene7.com/is/image/Target/GUEST_78c52946-cf6f-4d72-a1a4-24acea6854c2?wid=488&hei=488&fmt=pjpeg"
+             alt="calculator" style="float:right;width:500px;height:600px" />
+        Welcome to my Calculator
+    </h1>
+    <p>Enter any two numbers to add:</p>
+    <input type="text" id="add1" size="5" />
+    <input type="text" id="add2" size="5" />
+    <button type='button' onclick='add()'>Calculate</button>
+    <div id='divAdd'></div>
+
+    <p>Enter any two numbers to subtract:</p>
+    <input type="text" id="sub1" size="5" />
+    <input type="text" id="sub2" size="5" />
+    <button type='button' onclick='subtract()'>Calculate</button>
+    <div id='divSub'></div>
+
+    <p>Enter any two numbers to multiply:</p>
+    <input type="text" id="mult1" size="5" />
+    <input type="text" id="mult2" size="5" />
+    <button type='button' onclick='multiply()'>Calculate</button>
+    <div id='divMult'></div>
+
+    <p>Enter any two numbers to divide:</p>
+    <input type="text" id="div1" size="5" />
+    <input type="text" id="div2" size="5" />
+    <button type='button' onclick='divide()'>Calculate</button>
+    <div id='divDiv'></div>
+
+    <p>We will now count through the Fibonacci sequence<br /></p>
+    <p>Enter a starting value:</p>
+    <input type="text" id="fabStart" size="5" />
+    <p>Enter the desire number of values:</p>
+    <input type="text" id="fabNum" size="5" />
+    <button type='button' onclick='fab()'>Display</button>
+    <div id='divFab'></div>
+</body>       
+</html>
